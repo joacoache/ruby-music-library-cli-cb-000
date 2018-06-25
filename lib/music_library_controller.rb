@@ -23,15 +23,22 @@ class MusicLibraryController
   end
 
   def list_songs
-    Song.all.sort_by!{|a| a.name}.each.with_index(1) do |songs, i|
+    Song.all.sort_by{|a| a.name}.each.with_index(1) do |songs, i|
       puts "#{i}. #{songs.artist.name} - #{songs.name} - #{songs.genre.name}"
     end
   end
 
   def list_artists
-    Song.all.sort_by!{|a| a.artist.name}.each.with_index(1) do |artist, i|
+    Song.all.sort_by{|a| a.artist.name}.each.with_index(1) do |artist, i|
       puts "#{i}. #{artist.name}"
     end
   end
 
+  def list_genres
+    Song.all.sort_by{|a| a.genre.name}.each.with_index(1) do |artist, i|
+      puts "#{i}. #{genre.name}"
+    end
+  end
+
+  
 end
