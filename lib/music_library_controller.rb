@@ -29,13 +29,13 @@ class MusicLibraryController
   end
 
   def list_artists
-    Song.all.sort_by{|a| a.artist.name}.each.with_index(1) do |artist, i|
+    Artists.all.sort_by{|a| a.name}.each.with_index(1) do |artist, i|
       puts "#{i}. #{artist.name}"
     end
   end
 
   def list_genres
-    Song.all.sort_by{|a| a.genre.name}.each.with_index(1) do |genre, i|
+    Genre.all.sort_by{|a| a.name}.each.with_index(1) do |genre, i|
       puts "#{i}. #{genre.name}"
     end
   end
